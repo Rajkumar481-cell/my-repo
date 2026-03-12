@@ -156,6 +156,10 @@ def generate_commit_history(days=730):
 def main():
     """Main entry point."""
     try:
+        # Change to script directory
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        os.chdir(script_dir)
+        
         if not check_git_initialized():
             print("Error: Not a git repository")
             sys.exit(1)
